@@ -33,5 +33,5 @@ jobs:
         browser: edge
         version: latest
     - name: Run tests
-      run: mvn clean test
+      run: mvn clean test -Duser=$USER -Dpassword=$PASS
 
