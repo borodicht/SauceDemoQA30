@@ -14,6 +14,10 @@ jobs:
 
     runs-on: ubuntu-latest
 
+    env:
+      USER: ${{secrets.SD_USER}}
+      PASS: ${{secrets.SD_PASSWORD}}
+
     steps:
     - name: Checkout
       uses: actions/checkout@v4
@@ -29,8 +33,5 @@ jobs:
         browser: edge
         version: latest
     - name: Run tests
-      env:
-        USER: ${{secrets.SD_USER}}
-        PASS: ${{secrets.SD_PASSWORD}}
       run: mvn clean test
 
