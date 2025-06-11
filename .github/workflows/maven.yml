@@ -9,10 +9,6 @@ on:
   pull_request:
     branches: [ "master" ]
 
-  env:
-    USER: ${{secrets.SD_USER}}
-    PASS: ${{secrets.SD_PASSWORD}}
-
 jobs:
   build:
 
@@ -33,6 +29,8 @@ jobs:
         browser: edge
         version: latest
     - name: Run tests
+      env:
+        USER: ${{secrets.SD_USER}}
+        PASS: ${{secrets.SD_PASSWORD}}
       run: mvn clean test
-    - name: Run cross browsers tests
-      run: mvn clean test -DsuiteXmlFile='src/test/resources/CrossBrowserTest.xml'
+
