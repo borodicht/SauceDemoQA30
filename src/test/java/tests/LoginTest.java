@@ -16,7 +16,7 @@ public class LoginTest extends BaseTest {
     @Story("Позитивный логин")
     public void checkSuccessLogin() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
         assertEquals(productsPage.getTitle(),
                 "Products",
                 "Логин не выполнен");

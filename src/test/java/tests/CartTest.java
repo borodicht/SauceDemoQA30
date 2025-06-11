@@ -21,7 +21,7 @@ public class CartTest extends BaseTest {
     @Issue("TMS_T11")
     public void checkCart() {
         loginPage.open();
-        loginPage.login("standard_user", "secret_sauce");
+        loginPage.login(user, password);
         productsPage.addProduct("Sauce Labs Backpack");
         productsPage.openCart();
         assertTrue(cartPage.isProductInCart("Sauce Labs Backpack"),

@@ -5,14 +5,20 @@ name: SauceDemo CI
 
 on:
   push:
-    branches: [ "master" ]
+    branches: [ "master"]
   pull_request:
     branches: [ "master" ]
+  schedule:
+    - cron: "0 14 * 1 5"
+
+  env:
+    USER: ${{secrets.SD_USER}}
+    PASS: ${{secrets.SD_PASSWORD}}
 
 jobs:
   build:
 
-    runs-on: macos-latest
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout
