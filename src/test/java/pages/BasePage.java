@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import tests.PropertyReader;
 
 import java.time.Duration;
 import java.util.List;
@@ -14,7 +15,7 @@ import static org.testng.Assert.assertEquals;
 
 public abstract class BasePage {
 
-    public static final String BASE_URL = "https://www.saucedemo.com/";
+    public static final String BASE_URL = PropertyReader.getProperty("baseUrl");
     WebDriver driver;
     WebDriverWait wait;
 

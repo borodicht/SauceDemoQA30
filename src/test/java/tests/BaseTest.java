@@ -26,8 +26,8 @@ public class BaseTest {
     LoginPage loginPage;
     ProductsPage productsPage;
     CartPage cartPage;
-    String user = System.getProperty("user");
-    String password = System.getProperty("password");
+    String user = System.getProperty("user", PropertyReader.getProperty("user"));
+    String password = System.getProperty("password", PropertyReader.getProperty("password"));
 
     @Parameters({"browser"})
     @BeforeMethod(alwaysRun = true, description = "Открытие браузера")
@@ -43,6 +43,12 @@ public class BaseTest {
             options.addArguments("--disable-popup-blocking");
             options.addArguments("--disable-infobars");
             options.addArguments("--headless");
+
+
+            options.addArguments("--no-sandbox");
+            options.addArguments("--disable-dev-shm-usage");
+            options.addArguments("--disable-gpu");
+
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("firefox")) {
             FirefoxOptions options = new FirefoxOptions();
