@@ -42,9 +42,7 @@ public class BaseTest {
             options.addArguments("--disable-notifications");
             options.addArguments("--disable-popup-blocking");
             options.addArguments("--disable-infobars");
-            if (System.getProperty("headless", "true").equals("true")){
-                options.addArguments("--headless");
-            }
+            options.addArguments("--headless");
 
             options.addArguments("--no-sandbox");
             options.addArguments("--disable-dev-shm-usage");
