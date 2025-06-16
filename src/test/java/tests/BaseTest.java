@@ -33,6 +33,7 @@ public class BaseTest {
     @BeforeMethod(alwaysRun = true, description = "Открытие браузера")
     public void setup(@Optional("chrome") String browser, ITestContext context) {
         if (browser.equalsIgnoreCase("chrome")) {
+            System.out.println("Start Chrome browser");
             ChromeOptions options = new ChromeOptions();
             HashMap<String, Object> chromePrefs = new HashMap<>();
             chromePrefs.put("credentials_enable_service", false);
@@ -52,6 +53,7 @@ public class BaseTest {
 
             driver = new ChromeDriver(options);
         } else if (browser.equalsIgnoreCase("firefox")) {
+            System.out.println("Start Firefox browser");
             FirefoxOptions options = new FirefoxOptions();
             options.addArguments("--headless");
             driver = new FirefoxDriver(options);
