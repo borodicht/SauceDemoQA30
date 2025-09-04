@@ -11,7 +11,7 @@ pipeline {
     }
 
     stages {
-        stage('Build') {
+        stage('Run tests') {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/borodicht/SauceDemoQA30.git'

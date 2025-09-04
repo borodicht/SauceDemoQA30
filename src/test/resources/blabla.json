@@ -1,0 +1,11 @@
+{
+  "message": "Validation failed",
+  "errors": {
+    "login": [
+      "Укажите ник или e-mail"
+    ],
+    "password": [
+      "Укажите пароль"
+    ]
+  }
+}
